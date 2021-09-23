@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :books
   resources :users
   resources :homes
-  get "/users/users/homes/about" => "homes#about"
+  get "home/about" => "homes#about"
   delete "users_sign_out" => "users#sign_out"
   get "/users/sign_up" => "users#sign_up"
   get "/users/sign_in" => "users#sign_in"

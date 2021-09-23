@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = Book.all
+    @book = Book.new
   end
 
   def destroy
@@ -10,12 +11,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @book = Book.find(params[:id])
-      if @book.user == current_user
+    # @book = Book.find(params[:id])
+      # if @book.user == current_user
         render :edit
-      else
-        redirect_to user_path(@user.id)
-      end
+      # else
+        # redirect_to user_path(@user.id)
+      # end
   end
 
   def update
