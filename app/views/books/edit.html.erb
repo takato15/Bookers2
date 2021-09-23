@@ -7,6 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
       <h1>Editing Book</h1>
 
       <% if @book.errors.any? %>
@@ -31,10 +32,13 @@
           <div class="form-group">
               <%= f.submit 'Update Book', class:"btn btn-success" %>
           </div>
-        <% end %>
+
+      <% end %>
+
       <%= link_to "Show", book_path(@book.id), :class => book_path(@book.id) %>
        |
       <%= link_to "Back", "/books", :class => "back" %>
+
     </div>
   </div>
 </div>
