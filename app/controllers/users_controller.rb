@@ -11,9 +11,17 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+
+    # @book = @book.user.id
     # @book = Book.find(params[:id])
-      # if @book.user == current_user
+      if @user.id == current_user.id
         render :edit
+      else
+        redirect_to user_path(current_user)
+      end
+
+      # if @book.user == current_user
+        # render :edit
       # else
         # redirect_to user_path(@user.id)
       # end
